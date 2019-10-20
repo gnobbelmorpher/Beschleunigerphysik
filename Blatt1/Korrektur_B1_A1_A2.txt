@@ -1,0 +1,39 @@
+Aufagbe 1a)
+
+Prinzipiell besitzt das Elektron ein kleines magnetisches Moment auf welches in einem räumlich inhomogenen Feld eine Kraft wirkt, allerdings nicht dieser Effekt sehr sehr klein und daher für eine praktische Beschleunigung nicht nutzbar.
+
+Genutzt bei Neutronen
+
+0.5/1
+
+-----------
+1b)
+
+Aber warum gelangen sie überhaupt durch die Anode.
+
+Trägheit der Teilchen reicht aus. Sie folgen nicht genau der Feldlinie.
+
+0/1
+
+-----------
+2a)
+
+Diese Abgabe würde Einstein tief verletzen, nichts bewegt sich schneller als das Licht mit c=3*10^8 m/s
+
+0/1
+
+-----------
+2b)
+
+Zum einen Folgefehler, zum anderen nur die Energie von einem Teilchen berechnet und nicht des gesamten Strahls
+
+0/1
+
+-----------
+2c)
+
+Folgefehler
+
+0.5/1
+
+-----------

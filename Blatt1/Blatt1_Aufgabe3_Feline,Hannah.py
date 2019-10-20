@@ -1,7 +1,5 @@
 import numpy as np
 
-
-
 #Aufgabeinteil a
 text = "Hallo Welt!"
 
@@ -28,9 +26,11 @@ prims = []
 #ist die zahl ohne rest durch eine zahl größer 2 und kleiner als sie selbst teilbar wird die variable auf false gesetzt
 #ist am ende der schleife die variable noch true, wird die zahl an das array prims angehängt
 for number in numbers:
+#hier bekomme ich mit der eins probleme
     i = 2
     isPrime = True
     while i < number:
+#muss eignetlich nur bis wurzel prüfen
         if number % i == 0:
             isPrime = False
 
