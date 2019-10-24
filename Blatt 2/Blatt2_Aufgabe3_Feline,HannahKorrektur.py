@@ -36,6 +36,24 @@ plt.ylabel(r"Energie Teilchen 2 / GeV")
 ax.set_zlabel(r"invariante Masse / GeV/c²")
 plt.savefig("Blatt2_Aufgabe3c_Feline,HannahKorrektur.pdf")
 
+fig, ax = plt.subplots()
+im = ax.imshow(mass)
+
+cbar = ax.figure.colorbar(im, ax=ax, )
+cbar.ax.set_ylabel("Invariante Masse", rotation=-90, va="bottom")
+
+a = np.linspace(0, 99, 7 )
+b = np.linspace(0, 6, 7)
+
+# We want to show all ticks...
+ax.set_xticks(a)
+ax.set_yticks(a)
+# ... and label them with the respective list entries
+ax.set_xticklabels(b)
+ax.set_yticklabels(b)
+plt.savefig("Blatt2_Aufgabe3c_Feline,HannahHeatmap.pdf")
+
+
 #auch hier ein parabolischer verlauf der invarianten masse
 
 
