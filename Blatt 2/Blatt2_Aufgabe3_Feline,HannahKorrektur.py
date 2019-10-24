@@ -40,7 +40,7 @@ fig, ax = plt.subplots()
 im = ax.imshow(mass)
 
 cbar = ax.figure.colorbar(im, ax=ax, )
-cbar.ax.set_ylabel("Invariante Masse", rotation=-90, va="bottom")
+cbar.ax.set_ylabel("Invariante Masse / GeV/c²", rotation=-90, va="bottom")
 
 a = np.linspace(0, 99, 7 )
 b = np.linspace(0, 6, 7)
@@ -51,6 +51,8 @@ ax.set_yticks(a)
 # ... and label them with the respective list entries
 ax.set_xticklabels(b)
 ax.set_yticklabels(b)
+plt.xlabel(r"Energie Teilchen 1 / GeV")
+plt.ylabel(r"Energie Teilchen 2 / GeV")
 plt.savefig("Blatt2_Aufgabe3c_Feline,HannahHeatmap.pdf")
 
 
