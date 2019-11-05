@@ -43,11 +43,8 @@ gitter = 2000* np.random.rand(100,100) -1000
 
 elektrode()
 
-#ausgangszustand der abbruchbedingung (siehe unten)
-abbruch = 400
 
-
-while abbruch > 30 :
+for i in range(1,10000):
 
     #ecken
     gitter[0,0] = mittelwert2(0,0, 1, +1)
@@ -63,18 +60,10 @@ while abbruch > 30 :
         gitter[i, 99] = mittelwert3hor(i, 99 , -1)
 
     #mitte
-    #Abbruchbedingung: die summe der beträge der abweichungen des potentials zu dem wert schräg drüber wird für alle punkte in der mitte gebildet
-    #erneuter durchlauf wenn diese > 30
-    abw = []
     for i in range(1,99):
         for j in range(1,99):
             gitter[i,j] = mittelwert4(i, j)
-            abw.append(gitter[i,j]- gitter[i-1 , j-1])
-    np.absolute(abw)
-    abbruch = np.sum(abw)
     elektrode()
-
-
 
 
 fig, ax = plt.subplots()
@@ -83,7 +72,7 @@ im = ax.imshow(gitter)
 cbar = ax.figure.colorbar(im, ax=ax, )
 cbar.ax.set_ylabel("elektrisches Potential / V", rotation=-90, va="bottom")
 
-plt.savefig("Blatt3_Aufgabe3_Feline,HannahHeatmap.pdf")
+plt.savefig("Blatt3_Aufgabe3_Feline,Hannah.pdf")
 
 
 
