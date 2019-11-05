@@ -11,6 +11,7 @@ from mpl_toolkits.mplot3d import Axes3D
 f = 20 * 10**6
 q = 1.6 * 10**(-19) 
 m = 1.7 * 10**(-27)
+#Anzahl halbe Umläufe
 n = np.linspace(0,400,401)
 
 #B-Feld berechnen
@@ -29,10 +30,9 @@ Ekin =  n * 50 * np.absolute(np.cos(2 * np.pi* f * t)) + 50
 #aktueller Bahnradius
 r = np.sqrt(Ekin * 1e3 * q / (2 * m)) / (np.pi * f)
 
-B
-print(n)
-print(np.absolute(np.cos( np.pi* n)))
-print(Ekin)
+#B-Feld berechnet zu 1,225T
+print(B)
+
 plt.subplot(311)
 plt.xlabel("Anzahl halbe Umläufe")
 plt.ylabel("Kinetische Energie / keV")
@@ -50,6 +50,8 @@ plt.plot(n, r)
 
 plt.savefig("Blatt4_Aufgabe3a_Feline,Hannah.pdf")
 plt.clf()
+
+#entspricht unseren Erwartungen
 
 #Aufgabenteil b
 #relativistisch
@@ -112,10 +114,13 @@ plt.plot(n[1:-1], r[1:-1])
 
 plt.savefig("Blatt4_Aufgabe3b_Feline,Hannah.pdf")
 
-#print(np.absolute(np.cos(2 * np.pi * 20 * 10**6 * t)))
-print(r)
-print(g)
-print(T)
+#entspricht nicht unseren Erwartungen, da die Energie immer weiter steigt
+#Grund: g (also der gamma-faktor) nimmt nur minimal zu, da kinetische Energie zu klein im Vergleich zur Ruheenergie
+
+#Aufgabenteil c
+
+#Man könnte das B-Feld anpassen (zeitlich ändern oder vom Radius abhängig)
+#ausprobieren hat bei unserer Lösung keinen Sinn gemacht da Ekin ja nicht stagniert
 
 
 
