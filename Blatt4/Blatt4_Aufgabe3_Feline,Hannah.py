@@ -87,7 +87,7 @@ for i in range(401):
     t[0]= 0
 
 #Berechnung aktueller Gesamtenergie
-    E[i] = E[i-1] + 50 * np.absolute(np.cos(2 * np.pi * f* t[i]))
+    E[i] = E[i-1] + 50 * (-1)**i*(np.cos(2 * np.pi * f* t[i]))
     E[0] = 50 + E0
 
 # kinetische Enerie in keV 
@@ -114,8 +114,7 @@ plt.plot(n[1:-1], r[1:-1])
 
 plt.savefig("Blatt4_Aufgabe3b_Feline,Hannah.pdf")
 
-#entspricht nicht unseren Erwartungen, da die Energie immer weiter steigt
-#Grund: g (also der gamma-faktor) nimmt nur minimal zu, da kinetische Energie zu klein im Vergleich zur Ruheenergie
+
 
 #Aufgabenteil c
 
