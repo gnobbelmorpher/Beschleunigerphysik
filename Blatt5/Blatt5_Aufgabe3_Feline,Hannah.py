@@ -4,13 +4,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.constants import e, c, m_e
+from matplotlib.colors import BoundaryNorm
 
 #Aufgabenteil a
 
 #Konstanten
 f = 2856e6
 E = 12e6
-ds = 0.01
+ds = 0.01 #Schrittgröße 1cm
 
 #Änderungen
 
@@ -29,6 +30,7 @@ v = np.zeros(306)
 phi = np.zeros(306)
 Eende = np.zeros((150,100))
 
+#Unterschiedliche Startbedingungen werden gesetzt
 for l in range(0, 149, ):
     for n in range(0, 99):
         Ekin[0] = (l+1)*0.1* m_e*c**2
@@ -39,18 +41,25 @@ for l in range(0, 149, ):
             v[i] = V(Ekin[i])
             phi[i] = phi[i-1] + dphi(v[i])
 
+#Endwert der kinetischen Energie wird in Abhängigkeit der Startwerte gespeichert
         Eende[l][n] = Ekin[305]
 
 
-
-#print(Eende)
+#Plotten
 fig, ax = plt.subplots()
-im = ax.imshow(Eende / e / 1e6)
 
-cbar = ax.figure.colorbar(im, ax=ax, )
-cbar.ax.set_ylabel("kinetische Energie / MeV", rotation=-90, va="bottom")
+y = np.linspace(0.1, 15, 150)
+x = np.linspace(-np.pi , np.pi, 100)
+
+im = ax.pcolormesh(x, y, Eende/ e /1e6 )
+fig.colorbar(im, ax=ax)
+ax.set_title("kinetische Energie / MeV")
+
+ax.set_xlabel("Phase / rad")
+ax.set_ylabel("kinetische Anfangsenergie / Ruheenergie")
 
 plt.savefig("Blatt5_Aufgabe3a_Feline,Hannah.pdf")
+#weiße Felder sind Teilchen, die das Ende des Beschleunigungsmoduls nicht erreichen
 
 
 
