@@ -14,13 +14,9 @@ V = 1.2e6 #V
 T = 800e-9 #s
 f = 500e6 #Hz
 omega = 2* np.pi * f
-a = 8e-4 #alpha
-W = 170e3 #eV
+W = 570e3 #eV
 phis = np.pi - np.arcsin(W/(V))
-print(phis)
 
-#leider ist die Bedennung etwas doof: deltaphi bei mir ist d(\Dela \psi)
-#und dphi ist \delta \phi (bei E identisch)
 
 
 def deltaphi(dE, a0, a1, a2):
@@ -34,8 +30,8 @@ dE = np.zeros(500)
 dphi = np.zeros(500)
 
 a0 = 0
-a1 = 8e-4
-a2 = 0
+a1 = 8e-5
+a2 = 1e-3
 
 for n in range(1, 20):
     for k in range(0,9):
@@ -62,12 +58,12 @@ for n in range(1, 20):
 
 
 
-plt.title("Teilchenbewegung im longitudinalen Phasenraum")
+plt.title(r"$\alpha_2 = 10^{-3}, \alpha_1 = 8 \cdot 10^{-5},  $")
 
 plt.xlabel(r"$\Delta \psi / rad$")
 plt.ylabel(r"$\Delta E / E$")
 
-plt.savefig("Blatt7_Aufgabe3_Feline,Hannah.pdf")
+plt.savefig("Blatt7_Aufgabe3b10_Feline,Hannah.pdf")
 
 
 #stabile Trajektorien: Phase: ca. -2,5 bis 2,5
