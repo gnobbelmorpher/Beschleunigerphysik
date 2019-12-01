@@ -14,14 +14,14 @@ In = [0,0,1]
 Is = [0,0,-1]
 schale=np.zeros((40 ,3))
 r = 0.04
-phi0 = np.pi * 0.5
+phi0 = np.pi * 0.1
 
 #platzieren der drähte in Polarkoordinaten
-for i in range(0,19):
+for i in range(0,20):
     schale[i] = [r, -phi0+i*phi0/10, 0]
 
-for i in range(20,39):
-    schale[i] = [r, np.pi-phi0+i*phi0/10, 0]
+for i in range(20,40):
+    schale[i] = [r, np.pi-phi0+(i-20)*phi0/10, 0]
 
 #umrechnen in kartesische koordinaten
 for vektor in schale:
@@ -33,18 +33,16 @@ for vektor in schale:
 
 B = np.zeros((100,100,3))
 
-#südpol
-for i in range(0,19):
+for i in range(0,20):
     for k in range(1,99):
         for n in range(1,99): 
-            x = [0.01*k - schale[i,0], 0.01*n - schale[i,1], 0]
+            x = [0.001*k -0.05 - schale[i,0], 0.001*n - 0.05- schale[i,1], 0]
             B[k,n] = B[k,n] + biotsavart(Is, x)
 
-#nordpol
-for i in range(20,39):
+for i in range(20,40):
     for k in range(1,99):
         for n in range(1,99): 
-            x = [0.001*k - schale[i,0], 0.001*n - schale[i,1], 0]
+            x = [0.001*k - 0.05 - schale[i,0], 0.001*n - 0.05 - schale[i,1], 0]
             B[k,n] = B[k,n] + biotsavart(In, x)
 
 
@@ -55,8 +53,8 @@ ax = fig.gca()
 x, y = np.meshgrid(np.arange(-50, 50, 1),
                       np.arange(-50, 50, 1))
 
-u = 1e4*B[x, y, 0]
-v = 1e4*B[x, y, 1]
+u = 1e4*B[x-50, y-50, 0]
+v = 1e4*B[x-50, y-50, 1]
 
 ax.quiver(x, y, u, v, angles='xy', scale_units='xy', scale=1)
 for vektor in schale:
