@@ -1,0 +1,42 @@
+Aufagbe 1a)
+
+i) zu lang: kommt über einen großen Phasenbereich in der HF an, Teilchen mit zu großer Ablage gegenüber dem Synchronenphasenwinkel gehen verloren, die anderen durch Phasenfokussierung in den Bunch fokussiert. Innerer Teil des Bunches bleibt stabil.
+ii) zu breite Energieverteilung: selbe wie bei i) nur auf der Energieskala
+iii) etwas zu hohe Energie nicht weiter schlimm, solange in der Energieakzeptanz, alles darüber geht verloren
+iv) etwas zu früh eingeschossen, kommt vor der Synchronenphase im Cavity an solange Abweichung nicht zu groß bleibt es stabil, sonst geht es verloren.
+
+
+1/1
+
+-----------
+1b)
+
+Ja, ohne HF würde sich ein kontinuierlicher Strahl entwickeln.
+
+1/1
+
+-----------
+2a)
+
+Bei dem synchronen Phasenwinkel müsst ihr beachten das ihr die Elektronen auf der fallenden Flanke beschleunigt, als pi minus euren wert. Was hat denn das Delta_E bei euch für eine Einheit?
+
+Delta E/E = 3,333%
+
+0.5/1
+
+-----------
+2b)
+
+Im wesentlichen ja, ich hatte eigentlich erwartet das ihr das mathematisch löst.
+
+-> Formeln gleich null setzten
+
+Delta E/E = - alpha0/alpha1 für alpha2=0
+
+Delta Psi = n*2pi oder =-2psis + npi (n gerade bzw ungerade)
+
+
+
+1.5/2
+
+-----------
