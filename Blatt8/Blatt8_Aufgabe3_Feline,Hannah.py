@@ -10,11 +10,11 @@ from mpl_toolkits.mplot3d import axes3d
 def biotsavart(I, x):
     return - mu_0 /(2 * np.pi) * np.cross(I,x / np.dot(x,x))
 
-In = [0,0,1]
-Is = [0,0,-1]
+In = [0,0,2]
+Is = [0,0,-2]
 schale=np.zeros((40 ,3))
 r = 0.04
-phi0 = np.pi * 0.1
+phi0 = np.pi * 0.3
 
 #platzieren der drähte in Polarkoordinaten
 for i in range(0,20):
@@ -29,7 +29,6 @@ for vektor in schale:
     phi = vektor[1]
     vektor[0] = r * np.sin(phi)
     vektor[1] = r * np.cos(phi)
-    print(vektor)
 
 B = np.zeros((100,100,3))
 
@@ -40,8 +39,8 @@ for i in range(0,20):
             B[k,n] = B[k,n] + biotsavart(Is, x)
 
 for i in range(20,40):
-    for k in range(1,99):
-        for n in range(1,99): 
+    for k in range(0,100):
+        for n in range(0,100): 
             x = [0.001*k - 0.05 - schale[i,0], 0.001*n - 0.05 - schale[i,1], 0]
             B[k,n] = B[k,n] + biotsavart(In, x)
 
@@ -57,8 +56,9 @@ u = 1e4*B[x-50, y-50, 0]
 v = 1e4*B[x-50, y-50, 1]
 
 ax.quiver(x, y, u, v, angles='xy', scale_units='xy', scale=1)
-for vektor in schale:
-    plt.plot(100*vektor[0], 100*vektor[1])
+ax.plot(1000*schale[:,0], 1000*schale[:,1], 'x') 
+#for vektor in schale:
+#    ax.plot(100*vektor[0], 100*vektor[1], "o", "r")
 
 
 
