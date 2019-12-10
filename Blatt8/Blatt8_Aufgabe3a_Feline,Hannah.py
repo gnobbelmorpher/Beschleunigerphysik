@@ -18,10 +18,10 @@ phi0 = np.pi * 0.3
 
 #platzieren der drähte in Polarkoordinaten
 for i in range(0,20):
-    schale[i] = [r, -phi0+i*phi0/10, 0]
+    schale[i] = [r, -phi0+i*phi0/10+np.pi/2, 0]
 
 for i in range(20,40):
-    schale[i] = [r, np.pi-phi0+(i-20)*phi0/10, 0]
+    schale[i] = [r, np.pi-phi0+(i-20)*phi0/10+np.pi/2, 0]
 
 #umrechnen in kartesische koordinaten
 for vektor in schale:
@@ -69,7 +69,7 @@ ax.plot(1000*schale[:,0], 1000*schale[:,1], 'x')
 #plt.xlabel(r"$\Delta \psi / rad$")
 #plt.ylabel(r"$\Delta E / E$")
 
-plt.savefig("Blatt8_Aufgabe3_Feline,Hannah.pdf")
+plt.savefig("Blatt8_Aufgabe3a_Feline,Hannah.pdf")
 
 
 #stabile Trajektorien: Phase: ca. -2,5 bis 2,5
