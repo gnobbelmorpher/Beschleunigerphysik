@@ -32,13 +32,13 @@ def quadurpol(modul):
 
 
         struktur[a,a, i+modul*10] = np.cos(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
-        struktur[a,a+1, i+modul*10] = 1/np.sqrt(np.absolute(stärke[modul])) * np.sin(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
-        struktur[a+1,a, i+modul*10] = -np.sqrt(np.absolute(stärke[modul])) * np.sin(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
+        struktur[a+1,a, i+modul*10] = 1/np.sqrt(np.absolute(stärke[modul])) * np.sin(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
+        struktur[a,a+1, i+modul*10] = -np.sqrt(np.absolute(stärke[modul])) * np.sin(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
         struktur[a+1,a+1, i+modul*10] = np.cos(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
 
         struktur[b,b, i+modul*10] = np.cosh(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
-        struktur[b,b+1, i+modul*10] = 1/np.sqrt(np.absolute(stärke[modul])) * np.sinh(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
-        struktur[b+1,b, i+modul*10] = np.sqrt(np.absolute(stärke[modul])) * np.sinh(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
+        struktur[b+1,b, i+modul*10] = 1/np.sqrt(np.absolute(stärke[modul])) * np.sinh(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
+        struktur[b,b+1, i+modul*10] = np.sqrt(np.absolute(stärke[modul])) * np.sinh(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
         struktur[b+1,b+1, i+modul*10] = np.cosh(np.sqrt(np.absolute(stärke[modul]))*länge[modul]/10)
 
 
@@ -51,8 +51,8 @@ def driftstrecke(modul):
     for i in range(0, 10):
 
 
-        struktur[0,1, i+modul*10] = länge[modul]/10
-        struktur[2,3, i+modul*10] = länge[modul]/10
+        struktur[1,0, i+modul*10] = länge[modul]/10
+        struktur[3,2, i+modul*10] = länge[modul]/10
         
 
 
@@ -116,10 +116,15 @@ if typ[:].all() in [0,1,2,4,6,]:
     
     plt.savefig("Blatt10_Aufgabe3TeilchenspureninX_Feline,Hannah.pdf")
 
+    plt.clf()
+
+
     for i in range(0, 1000):
         plt.plot(s, teilchen[2,i,:])
     
     plt.savefig("Blatt10_Aufgabe3TeilchenspureninY_Feline,Hannah.pdf")
+
+    plt.clf()
 
     for i in range(0, 40):
         plt.subplot(4, 10, i+1)
@@ -137,7 +142,10 @@ if typ[:].all() in [0,1,2,4,6,]:
 
     plt.savefig("Blatt10_Aufgabe3PhasenrauminY_Feline,Hannah.pdf")
 
- 
+    plt.clf()
 
+# durch eine Verringerung der Standadabweichung des Winkels, kommt es vor allem zu einer Verschmalerung der Ellipsen in Phasenraum.
+# Zusätzlich Verringern sich die Abweichungen von der Sollbahn ein wenig.
+# Entschuldigung, für das kack Format der Plots.
 
 
